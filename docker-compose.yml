@@ -1,0 +1,21 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "9090:8080"   # Порт для веб-интерфейса Jenkins
+      - "50000:50000"  # Порт для агента Jenkins (если нужно подключать агентов)
+    volumes:
+      - jenkins_home:/var/jenkins_home  # Сохранение данных Jenkins на хосте
+    environment:
+      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"  # Отключаем начальный мастер настройки
+    networks:
+      - jenkins_network
+
+networks:
+  jenkins_network:
+    driver: bridge
+
+volumes:
+  jenkins_home:
