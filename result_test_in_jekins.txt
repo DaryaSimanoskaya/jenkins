@@ -1,0 +1,634 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/test2
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/test2/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/DaryaSimanoskaya/selenium_tests # timeout=10
+Fetching upstream changes from https://github.com/DaryaSimanoskaya/selenium_tests
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.5'
+ > git fetch --tags --force --progress -- https://github.com/DaryaSimanoskaya/selenium_tests +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 6b0967138190fc8d2b981db0ac0b7c6a92cf2549 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 6b0967138190fc8d2b981db0ac0b7c6a92cf2549 # timeout=10
+Commit message: "Merge pull request #5 from DaryaSimanoskaya/dockerfileinproject"
+ > git rev-list --no-walk 6b0967138190fc8d2b981db0ac0b7c6a92cf2549 # timeout=10
+[test2] $ /bin/sh -xe /tmp/jenkins70956140391182013.sh
++ python3.11 -m pip install -r requirements.txt
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: allure-pytest==2.13.5 in /var/jenkins_home/.local/lib/python3.11/site-packages (from -r requirements.txt (line 1)) (2.13.5)
+Requirement already satisfied: allure-python-commons==2.13.5 in /var/jenkins_home/.local/lib/python3.11/site-packages (from -r requirements.txt (line 2)) (2.13.5)
+Requirement already satisfied: pytest==8.2.2 in /var/jenkins_home/.local/lib/python3.11/site-packages (from -r requirements.txt (line 3)) (8.2.2)
+Requirement already satisfied: requests==2.31.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from -r requirements.txt (line 4)) (2.31.0)
+Requirement already satisfied: selenium==4.22.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from -r requirements.txt (line 5)) (4.22.0)
+Requirement already satisfied: pytest-xdist in /var/jenkins_home/.local/lib/python3.11/site-packages (from -r requirements.txt (line 6)) (3.6.1)
+Requirement already satisfied: attrs>=16.0.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from allure-python-commons==2.13.5->-r requirements.txt (line 2)) (24.2.0)
+Requirement already satisfied: pluggy>=0.4.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from allure-python-commons==2.13.5->-r requirements.txt (line 2)) (1.5.0)
+Requirement already satisfied: iniconfig in /var/jenkins_home/.local/lib/python3.11/site-packages (from pytest==8.2.2->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: packaging in /var/jenkins_home/.local/lib/python3.11/site-packages (from pytest==8.2.2->-r requirements.txt (line 3)) (24.1)
+Requirement already satisfied: charset-normalizer<4,>=2 in /var/jenkins_home/.local/lib/python3.11/site-packages (from requests==2.31.0->-r requirements.txt (line 4)) (3.4.0)
+Requirement already satisfied: idna<4,>=2.5 in /var/jenkins_home/.local/lib/python3.11/site-packages (from requests==2.31.0->-r requirements.txt (line 4)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /var/jenkins_home/.local/lib/python3.11/site-packages (from requests==2.31.0->-r requirements.txt (line 4)) (2.2.3)
+Requirement already satisfied: certifi>=2017.4.17 in /var/jenkins_home/.local/lib/python3.11/site-packages (from requests==2.31.0->-r requirements.txt (line 4)) (2024.8.30)
+Requirement already satisfied: trio~=0.17 in /var/jenkins_home/.local/lib/python3.11/site-packages (from selenium==4.22.0->-r requirements.txt (line 5)) (0.27.0)
+Requirement already satisfied: trio-websocket~=0.9 in /var/jenkins_home/.local/lib/python3.11/site-packages (from selenium==4.22.0->-r requirements.txt (line 5)) (0.11.1)
+Requirement already satisfied: typing_extensions>=4.9.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from selenium==4.22.0->-r requirements.txt (line 5)) (4.12.2)
+Requirement already satisfied: websocket-client>=1.8.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from selenium==4.22.0->-r requirements.txt (line 5)) (1.8.0)
+Requirement already satisfied: execnet>=2.1 in /var/jenkins_home/.local/lib/python3.11/site-packages (from pytest-xdist->-r requirements.txt (line 6)) (2.1.1)
+Requirement already satisfied: sortedcontainers in /var/jenkins_home/.local/lib/python3.11/site-packages (from trio~=0.17->selenium==4.22.0->-r requirements.txt (line 5)) (2.4.0)
+Requirement already satisfied: outcome in /var/jenkins_home/.local/lib/python3.11/site-packages (from trio~=0.17->selenium==4.22.0->-r requirements.txt (line 5)) (1.3.0.post0)
+Requirement already satisfied: sniffio>=1.3.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from trio~=0.17->selenium==4.22.0->-r requirements.txt (line 5)) (1.3.1)
+Requirement already satisfied: wsproto>=0.14 in /var/jenkins_home/.local/lib/python3.11/site-packages (from trio-websocket~=0.9->selenium==4.22.0->-r requirements.txt (line 5)) (1.2.0)
+Requirement already satisfied: pysocks!=1.5.7,<2.0,>=1.5.6 in /var/jenkins_home/.local/lib/python3.11/site-packages (from urllib3<3,>=1.21.1->requests==2.31.0->-r requirements.txt (line 4)) (1.7.1)
+Requirement already satisfied: h11<1,>=0.9.0 in /var/jenkins_home/.local/lib/python3.11/site-packages (from wsproto>=0.14->trio-websocket~=0.9->selenium==4.22.0->-r requirements.txt (line 5)) (0.14.0)
+
+[notice] A new release of pip available: 22.3 -> 24.2
+[notice] To update, run: pip3.11 install --upgrade pip
++ python3.11 -m venv venv
++ . venv/bin/activate
++ deactivate nondestructive
++ [ -n  ]
++ [ -n  ]
++ [ -n  -o -n  ]
++ [ -n  ]
++ unset VIRTUAL_ENV
++ unset VIRTUAL_ENV_PROMPT
++ [ ! nondestructive = nondestructive ]
++ VIRTUAL_ENV=/var/jenkins_home/workspace/test2/venv
++ export VIRTUAL_ENV
++ _OLD_VIRTUAL_PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ PATH=/var/jenkins_home/workspace/test2/venv/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ export PATH
++ [ -n  ]
++ [ -z  ]
++ _OLD_VIRTUAL_PS1=$ 
++ PS1=(venv) $ 
++ export PS1
++ VIRTUAL_ENV_PROMPT=(venv) 
++ export VIRTUAL_ENV_PROMPT
++ [ -n  -o -n  ]
++ pip install -r requirements.txt
+Collecting allure-pytest==2.13.5
+  Using cached allure_pytest-2.13.5-py3-none-any.whl (11 kB)
+Collecting allure-python-commons==2.13.5
+  Using cached allure_python_commons-2.13.5-py3-none-any.whl (15 kB)
+Collecting pytest==8.2.2
+  Using cached pytest-8.2.2-py3-none-any.whl (339 kB)
+Collecting requests==2.31.0
+  Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+Collecting selenium==4.22.0
+  Using cached selenium-4.22.0-py3-none-any.whl (9.4 MB)
+Collecting pytest-xdist
+  Using cached pytest_xdist-3.6.1-py3-none-any.whl (46 kB)
+Collecting attrs>=16.0.0
+  Using cached attrs-24.2.0-py3-none-any.whl (63 kB)
+Collecting pluggy>=0.4.0
+  Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+Collecting iniconfig
+  Using cached iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Collecting packaging
+  Using cached packaging-24.1-py3-none-any.whl (53 kB)
+Collecting charset-normalizer<4,>=2
+  Using cached charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (142 kB)
+Collecting idna<4,>=2.5
+  Using cached idna-3.10-py3-none-any.whl (70 kB)
+Collecting urllib3<3,>=1.21.1
+  Using cached urllib3-2.2.3-py3-none-any.whl (126 kB)
+Collecting certifi>=2017.4.17
+  Using cached certifi-2024.8.30-py3-none-any.whl (167 kB)
+Collecting trio~=0.17
+  Using cached trio-0.27.0-py3-none-any.whl (481 kB)
+Collecting trio-websocket~=0.9
+  Using cached trio_websocket-0.11.1-py3-none-any.whl (17 kB)
+Collecting typing_extensions>=4.9.0
+  Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Collecting websocket-client>=1.8.0
+  Using cached websocket_client-1.8.0-py3-none-any.whl (58 kB)
+Collecting execnet>=2.1
+  Using cached execnet-2.1.1-py3-none-any.whl (40 kB)
+Collecting sortedcontainers
+  Using cached sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Collecting outcome
+  Using cached outcome-1.3.0.post0-py2.py3-none-any.whl (10 kB)
+Collecting sniffio>=1.3.0
+  Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Collecting wsproto>=0.14
+  Using cached wsproto-1.2.0-py3-none-any.whl (24 kB)
+Collecting pysocks!=1.5.7,<2.0,>=1.5.6
+  Using cached PySocks-1.7.1-py3-none-any.whl (16 kB)
+Collecting h11<1,>=0.9.0
+  Using cached h11-0.14.0-py3-none-any.whl (58 kB)
+Installing collected packages: sortedcontainers, websocket-client, urllib3, typing_extensions, sniffio, pysocks, pluggy, packaging, iniconfig, idna, h11, execnet, charset-normalizer, certifi, attrs, wsproto, requests, pytest, outcome, allure-python-commons, trio, pytest-xdist, allure-pytest, trio-websocket, selenium
+Successfully installed allure-pytest-2.13.5 allure-python-commons-2.13.5 attrs-24.2.0 certifi-2024.8.30 charset-normalizer-3.4.0 execnet-2.1.1 h11-0.14.0 idna-3.10 iniconfig-2.0.0 outcome-1.3.0.post0 packaging-24.1 pluggy-1.5.0 pysocks-1.7.1 pytest-8.2.2 pytest-xdist-3.6.1 requests-2.31.0 selenium-4.22.0 sniffio-1.3.1 sortedcontainers-2.4.0 trio-0.27.0 trio-websocket-0.11.1 typing_extensions-4.12.2 urllib3-2.2.3 websocket-client-1.8.0 wsproto-1.2.0
+
+[notice] A new release of pip available: 22.3 -> 24.2
+[notice] To update, run: pip install --upgrade pip
++ python3.11 -m pytest --url=http://host.docker.internal:8081 --browser=chrome --executor=host.docker.internal --browser-version=latest --threads=4 --remote --alluredir=./allure-results
+============================= test session starts ==============================
+platform linux -- Python 3.11.0, pytest-8.2.2, pluggy-1.5.0
+rootdir: /var/jenkins_home/workspace/test2
+configfile: pytest.ini
+plugins: xdist-3.6.1, allure-pytest-2.13.5
+collected 12 items
+
+tests/test_opencart_pages.py ..F..                                       [ 41%]
+tests/test_opencart_scenarios.py FF..EE.                                 [100%]
+
+==================================== ERRORS ====================================
+_________ ERROR at setup of TestOpencartScenarios.test_add_new_product _________
+
+browser = <selenium.webdriver.remote.webdriver.WebDriver (session="36a4f93a3a77dfe781f30fe87bfd7954")>
+url = 'http://host.docker.internal:8081'
+
+    @pytest.fixture(scope="function")
+    def administrator_login_token(browser, url):
+        browser.get(f"{url}/administration/")
+        admin_page = AdminLoginPage(browser)
+        admin_page.set_login("user")
+        admin_page.set_password("bitnami")
+        admin_page.login()
+        time.sleep(1)
+        current_url = browser.current_url
+>       token = current_url.split('token=')[1]
+E       IndexError: list index out of range
+
+conftest.py:138: IndexError
+---------------------------- Captured stderr setup -----------------------------
+2024-10-22 11:05:07,618 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+2024-10-22 11:05:07,618 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+2024-10-22 11:05:09,550 - pages.BasePage - INFO - Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="36a4f93a3a77dfe781f30fe87bfd7954")>
+2024-10-22 11:05:09,550 - pages.BasePage - INFO - Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="36a4f93a3a77dfe781f30fe87bfd7954")>
+2024-10-22 11:05:09,551 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='username']")
+2024-10-22 11:05:09,551 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='username']")
+2024-10-22 11:05:09,568 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='username']")
+2024-10-22 11:05:09,568 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='username']")
+2024-10-22 11:05:09,642 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='password']")
+2024-10-22 11:05:09,642 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='password']")
+2024-10-22 11:05:09,658 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='password']")
+2024-10-22 11:05:09,658 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='password']")
+2024-10-22 11:05:09,716 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//button[text()=' Login']")
+2024-10-22 11:05:09,716 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//button[text()=' Login']")
+2024-10-22 11:05:09,732 - pages.BasePage - INFO - Found element ('xpath', "//button[text()=' Login']")
+2024-10-22 11:05:09,732 - pages.BasePage - INFO - Found element ('xpath', "//button[text()=' Login']")
+------------------------------ Captured log setup ------------------------------
+INFO     root:conftest.py:73 Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+INFO     pages.BasePage:BasePage.py:15 Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="36a4f93a3a77dfe781f30fe87bfd7954")>
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//input[@name='username']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//input[@name='username']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//input[@name='password']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//input[@name='password']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//button[text()=' Login']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//button[text()=' Login']")
+____ ERROR at setup of TestOpencartScenarios.test_delete_product_from_admin ____
+
+browser = <selenium.webdriver.remote.webdriver.WebDriver (session="08e8cc1cf95fee50bbfd1f3a7559e72a")>
+url = 'http://host.docker.internal:8081'
+
+    @pytest.fixture(scope="function")
+    def administrator_login_token(browser, url):
+        browser.get(f"{url}/administration/")
+        admin_page = AdminLoginPage(browser)
+        admin_page.set_login("user")
+        admin_page.set_password("bitnami")
+        admin_page.login()
+        time.sleep(1)
+        current_url = browser.current_url
+>       token = current_url.split('token=')[1]
+E       IndexError: list index out of range
+
+conftest.py:138: IndexError
+---------------------------- Captured stderr setup -----------------------------
+2024-10-22 11:05:11,448 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+2024-10-22 11:05:11,448 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+2024-10-22 11:05:13,415 - pages.BasePage - INFO - Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="08e8cc1cf95fee50bbfd1f3a7559e72a")>
+2024-10-22 11:05:13,415 - pages.BasePage - INFO - Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="08e8cc1cf95fee50bbfd1f3a7559e72a")>
+2024-10-22 11:05:13,415 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='username']")
+2024-10-22 11:05:13,415 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='username']")
+2024-10-22 11:05:13,431 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='username']")
+2024-10-22 11:05:13,431 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='username']")
+2024-10-22 11:05:13,497 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='password']")
+2024-10-22 11:05:13,497 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='password']")
+2024-10-22 11:05:13,511 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='password']")
+2024-10-22 11:05:13,511 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='password']")
+2024-10-22 11:05:13,565 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//button[text()=' Login']")
+2024-10-22 11:05:13,565 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//button[text()=' Login']")
+2024-10-22 11:05:13,581 - pages.BasePage - INFO - Found element ('xpath', "//button[text()=' Login']")
+2024-10-22 11:05:13,581 - pages.BasePage - INFO - Found element ('xpath', "//button[text()=' Login']")
+------------------------------ Captured log setup ------------------------------
+INFO     root:conftest.py:73 Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+INFO     pages.BasePage:BasePage.py:15 Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="08e8cc1cf95fee50bbfd1f3a7559e72a")>
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//input[@name='username']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//input[@name='username']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//input[@name='password']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//input[@name='password']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//button[text()=' Login']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//button[text()=' Login']")
+=================================== FAILURES ===================================
+___________________ TestOpenCartPages.test_product_elements ____________________
+
+self = <tests.test_opencart_pages.TestOpenCartPages object at 0x7f2987a0c410>
+browser = <selenium.webdriver.remote.webdriver.WebDriver (session="1c334b04e3c612374766b0251561fa23")>
+url = 'http://host.docker.internal:8081'
+
+    @allure.description("Verify product page elements are present")
+    @allure.title("Test Product Page Elements")
+    def test_product_elements(self, browser, url):
+        with allure.step("Open product page for MacBook"):
+            browser.get(f"{url}/en-gb/product/macbook")
+    
+        page = ProductPage(browser)
+    
+        with allure.step("Check for product image element"):
+>           assert page.find_element(ProductPageLocators.PRODUCT_IMAGE)
+
+tests/test_opencart_pages.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/BasePage.py:19: in find_element
+    element = WebDriverWait(self.driver, time_count).until(EC.presence_of_element_located(locator),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.support.wait.WebDriverWait (session="1c334b04e3c612374766b0251561fa23")>
+method = <function presence_of_element_located.<locals>._predicate at 0x7f2987bd85e0>
+message = 'Can\'t find element by locator (\'xpath\', "//div[@class=\'image magnific-popup\']")'
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+    
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() > end_time:
+                break
+>       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', "//div[@class='image magnific-popup']")
+E       Stacktrace:
+E       #0 0x5641f6a086ba <unknown>
+E       #1 0x5641f66d8730 <unknown>
+E       #2 0x5641f6727d9b <unknown>
+E       #3 0x5641f6728081 <unknown>
+E       #4 0x5641f676bcd4 <unknown>
+E       #5 0x5641f674aa7d <unknown>
+E       #6 0x5641f67691ca <unknown>
+E       #7 0x5641f674a7f3 <unknown>
+E       #8 0x5641f671aec9 <unknown>
+E       #9 0x5641f671b91e <unknown>
+E       #10 0x5641f69ce9eb <unknown>
+E       #11 0x5641f69d2972 <unknown>
+E       #12 0x5641f69bbe15 <unknown>
+E       #13 0x5641f69d3502 <unknown>
+E       #14 0x5641f69a0d2f <unknown>
+E       #15 0x5641f69f7578 <unknown>
+E       #16 0x5641f69f7750 <unknown>
+E       #17 0x5641f6a0748c <unknown>
+E       #18 0x7f08f21eaac3 <unknown>
+
+venv/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:105: TimeoutException
+---------------------------- Captured stderr setup -----------------------------
+2024-10-22 11:04:14,217 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+2024-10-22 11:04:14,217 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+------------------------------ Captured log setup ------------------------------
+INFO     root:conftest.py:73 Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+----------------------------- Captured stderr call -----------------------------
+2024-10-22 11:04:15,846 - pages.BasePage - INFO - Initialized ProductPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="1c334b04e3c612374766b0251561fa23")>
+2024-10-22 11:04:15,846 - pages.BasePage - INFO - Initialized ProductPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="1c334b04e3c612374766b0251561fa23")>
+2024-10-22 11:04:15,847 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//div[@class='image magnific-popup']")
+2024-10-22 11:04:15,847 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//div[@class='image magnific-popup']")
+------------------------------ Captured log call -------------------------------
+INFO     pages.BasePage:BasePage.py:15 Initialized ProductPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="1c334b04e3c612374766b0251561fa23")>
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//div[@class='image magnific-popup']")
+________________ TestOpencartScenarios.test_admin_login_logout _________________
+
+self = <tests.test_opencart_scenarios.TestOpencartScenarios object at 0x7f2987a29250>
+browser = <selenium.webdriver.remote.webdriver.WebDriver (session="0840daf470ced1456ab748656c164279")>
+url = 'http://host.docker.internal:8081'
+
+    @allure.description("Test admin login and logout functionality")
+    def test_admin_login_logout(self, browser, url):
+        with allure.step("Open admin login page"):
+            browser.get(f"{url}/administration/")
+    
+        page = AdminLoginPage(browser)
+    
+        with allure.step("Enter admin credentials"):
+            page.set_login("user")
+            page.set_password("bitnami")
+            page.login()
+    
+        with allure.step("Verify admin panel elements are visible"):
+>           assert page.find_element(AdminLoginPageLocators.EXTENSIONS)
+
+tests/test_opencart_scenarios.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/BasePage.py:19: in find_element
+    element = WebDriverWait(self.driver, time_count).until(EC.presence_of_element_located(locator),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.support.wait.WebDriverWait (session="0840daf470ced1456ab748656c164279")>
+method = <function presence_of_element_located.<locals>._predicate at 0x7f2987bd8a40>
+message = "Can't find element by locator ('css selector', '#menu-extension')"
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+    
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() > end_time:
+                break
+>       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('css selector', '#menu-extension')
+E       Stacktrace:
+E       #0 0x55f91ace46ba <unknown>
+E       #1 0x55f91a9b4730 <unknown>
+E       #2 0x55f91aa03d9b <unknown>
+E       #3 0x55f91aa04081 <unknown>
+E       #4 0x55f91aa47cd4 <unknown>
+E       #5 0x55f91aa26a7d <unknown>
+E       #6 0x55f91aa451ca <unknown>
+E       #7 0x55f91aa267f3 <unknown>
+E       #8 0x55f91a9f6ec9 <unknown>
+E       #9 0x55f91a9f791e <unknown>
+E       #10 0x55f91acaa9eb <unknown>
+E       #11 0x55f91acae972 <unknown>
+E       #12 0x55f91ac97e15 <unknown>
+E       #13 0x55f91acaf502 <unknown>
+E       #14 0x55f91ac7cd2f <unknown>
+E       #15 0x55f91acd3578 <unknown>
+E       #16 0x55f91acd3750 <unknown>
+E       #17 0x55f91ace348c <unknown>
+E       #18 0x7fbedbb61ac3 <unknown>
+
+venv/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:105: TimeoutException
+---------------------------- Captured stderr setup -----------------------------
+2024-10-22 11:04:30,411 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+2024-10-22 11:04:30,411 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+------------------------------ Captured log setup ------------------------------
+INFO     root:conftest.py:73 Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+----------------------------- Captured stderr call -----------------------------
+2024-10-22 11:04:32,414 - pages.BasePage - INFO - Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="0840daf470ced1456ab748656c164279")>
+2024-10-22 11:04:32,414 - pages.BasePage - INFO - Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="0840daf470ced1456ab748656c164279")>
+2024-10-22 11:04:32,415 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='username']")
+2024-10-22 11:04:32,415 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='username']")
+2024-10-22 11:04:32,432 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='username']")
+2024-10-22 11:04:32,432 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='username']")
+2024-10-22 11:04:32,502 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='password']")
+2024-10-22 11:04:32,502 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//input[@name='password']")
+2024-10-22 11:04:32,517 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='password']")
+2024-10-22 11:04:32,517 - pages.BasePage - INFO - Found element ('xpath', "//input[@name='password']")
+2024-10-22 11:04:32,571 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//button[text()=' Login']")
+2024-10-22 11:04:32,571 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//button[text()=' Login']")
+2024-10-22 11:04:32,585 - pages.BasePage - INFO - Found element ('xpath', "//button[text()=' Login']")
+2024-10-22 11:04:32,585 - pages.BasePage - INFO - Found element ('xpath', "//button[text()=' Login']")
+2024-10-22 11:04:32,643 - pages.BasePage - INFO - Finding element by locator: ('css selector', '#menu-extension')
+2024-10-22 11:04:32,643 - pages.BasePage - INFO - Finding element by locator: ('css selector', '#menu-extension')
+------------------------------ Captured log call -------------------------------
+INFO     pages.BasePage:BasePage.py:15 Initialized AdminLoginPage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="0840daf470ced1456ab748656c164279")>
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//input[@name='username']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//input[@name='username']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//input[@name='password']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//input[@name='password']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//button[text()=' Login']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//button[text()=' Login']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('css selector', '#menu-extension')
+____________ TestOpencartScenarios.test_add_random_product_to_cart _____________
+
+self = <tests.test_opencart_scenarios.TestOpencartScenarios object at 0x7f2987a294d0>
+browser = <selenium.webdriver.remote.webdriver.WebDriver (session="edbca1ecee00017a540823a5bc73ff7e")>
+url = 'http://host.docker.internal:8081'
+
+    @allure.description("Test adding a random product to the cart")
+    def test_add_random_product_to_cart(self, browser, url):
+        with allure.step("Open homepage"):
+            browser.get(url)
+    
+        home_page = HomePage(browser)
+    
+        with allure.step("Add a random product to the cart"):
+            home_page.add_random_product_to_cart()
+            assert home_page.find_element(HomePageLocators.ALERT_YOU_ADDED_PRODUCT)
+            product_url = home_page.find_elements(HomePageLocators.PRODUCT_URL)[0].get_attribute("href")
+    
+        with allure.step("Go to shopping cart"):
+            home_page.go_to_shopping_cart()
+>           assert home_page.find_element(CartPageLocators.ADDED_PRODUCT_URL).get_attribute("href") == product_url
+
+tests/test_opencart_scenarios.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/BasePage.py:19: in find_element
+    element = WebDriverWait(self.driver, time_count).until(EC.presence_of_element_located(locator),
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.support.wait.WebDriverWait (session="edbca1ecee00017a540823a5bc73ff7e")>
+method = <function presence_of_element_located.<locals>._predicate at 0x7f2987bb13a0>
+message = 'Can\'t find element by locator (\'xpath\', "//div[@id=\'shopping-cart\']//a")'
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+    
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() > end_time:
+                break
+>       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', "//div[@id='shopping-cart']//a")
+E       Stacktrace:
+E       #0 0x563fe02546ba <unknown>
+E       #1 0x563fdff24730 <unknown>
+E       #2 0x563fdff73d9b <unknown>
+E       #3 0x563fdff74081 <unknown>
+E       #4 0x563fdffb7cd4 <unknown>
+E       #5 0x563fdff96a7d <unknown>
+E       #6 0x563fdffb51ca <unknown>
+E       #7 0x563fdff967f3 <unknown>
+E       #8 0x563fdff66ec9 <unknown>
+E       #9 0x563fdff6791e <unknown>
+E       #10 0x563fe021a9eb <unknown>
+E       #11 0x563fe021e972 <unknown>
+E       #12 0x563fe0207e15 <unknown>
+E       #13 0x563fe021f502 <unknown>
+E       #14 0x563fe01ecd2f <unknown>
+E       #15 0x563fe0243578 <unknown>
+E       #16 0x563fe0243750 <unknown>
+E       #17 0x563fe025348c <unknown>
+E       #18 0x7f59f2737ac3 <unknown>
+
+venv/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:105: TimeoutException
+---------------------------- Captured stderr setup -----------------------------
+2024-10-22 11:04:43,292 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+2024-10-22 11:04:43,292 - root - INFO - Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+------------------------------ Captured log setup ------------------------------
+INFO     root:conftest.py:73 Starting browser: chrome, version: latest, headless: False, remote: True, mobile: False, vnc: False, threads: 4
+----------------------------- Captured stderr call -----------------------------
+2024-10-22 11:04:44,976 - pages.BasePage - INFO - Initialized HomePage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="edbca1ecee00017a540823a5bc73ff7e")>
+2024-10-22 11:04:44,976 - pages.BasePage - INFO - Initialized HomePage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="edbca1ecee00017a540823a5bc73ff7e")>
+2024-10-22 11:04:44,977 - pages.BasePage - INFO - Finding elements by locator: ('xpath', "//button[@title='Add to Cart']")
+2024-10-22 11:04:44,977 - pages.BasePage - INFO - Finding elements by locator: ('xpath', "//button[@title='Add to Cart']")
+2024-10-22 11:04:44,999 - pages.BasePage - INFO - Found elements: ('xpath', "//button[@title='Add to Cart']")
+2024-10-22 11:04:44,999 - pages.BasePage - INFO - Found elements: ('xpath', "//button[@title='Add to Cart']")
+2024-10-22 11:04:44,999 - pages.BasePage - INFO - Clicking element with JS: <selenium.webdriver.remote.webelement.WebElement (session="edbca1ecee00017a540823a5bc73ff7e", element="f.2657E0221B6CFBACF7962AD7E8487351.d.5479A126C05887536AD411A2CEE64006.e.9")>
+2024-10-22 11:04:44,999 - pages.BasePage - INFO - Clicking element with JS: <selenium.webdriver.remote.webelement.WebElement (session="edbca1ecee00017a540823a5bc73ff7e", element="f.2657E0221B6CFBACF7962AD7E8487351.d.5479A126C05887536AD411A2CEE64006.e.9")>
+2024-10-22 11:04:45,027 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:45,027 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:45,561 - pages.BasePage - INFO - Found element ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:45,561 - pages.BasePage - INFO - Found element ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:45,561 - pages.BasePage - INFO - Finding elements by locator: ('xpath', "//div[@class='content']//a")
+2024-10-22 11:04:45,561 - pages.BasePage - INFO - Finding elements by locator: ('xpath', "//div[@class='content']//a")
+2024-10-22 11:04:45,573 - pages.BasePage - INFO - Found elements: ('xpath', "//div[@class='content']//a")
+2024-10-22 11:04:45,573 - pages.BasePage - INFO - Found elements: ('xpath', "//div[@class='content']//a")
+2024-10-22 11:04:45,583 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//span[text()='Shopping Cart']")
+2024-10-22 11:04:45,583 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//span[text()='Shopping Cart']")
+2024-10-22 11:04:45,594 - pages.BasePage - INFO - Found element ('xpath', "//span[text()='Shopping Cart']")
+2024-10-22 11:04:45,594 - pages.BasePage - INFO - Found element ('xpath', "//span[text()='Shopping Cart']")
+2024-10-22 11:04:45,602 - pages.BasePage - INFO - Waiting until element is not visible: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:45,602 - pages.BasePage - INFO - Waiting until element is not visible: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:51,338 - pages.BasePage - INFO - Element is not visible: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:51,338 - pages.BasePage - INFO - Element is not visible: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+2024-10-22 11:04:51,603 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//div[@id='shopping-cart']//a")
+2024-10-22 11:04:51,603 - pages.BasePage - INFO - Finding element by locator: ('xpath', "//div[@id='shopping-cart']//a")
+------------------------------ Captured log call -------------------------------
+INFO     pages.BasePage:BasePage.py:15 Initialized HomePage with driver <selenium.webdriver.remote.webdriver.WebDriver (session="edbca1ecee00017a540823a5bc73ff7e")>
+INFO     pages.BasePage:BasePage.py:43 Finding elements by locator: ('xpath', "//button[@title='Add to Cart']")
+INFO     pages.BasePage:BasePage.py:46 Found elements: ('xpath', "//button[@title='Add to Cart']")
+INFO     pages.BasePage:BasePage.py:50 Clicking element with JS: <selenium.webdriver.remote.webelement.WebElement (session="edbca1ecee00017a540823a5bc73ff7e", element="f.2657E0221B6CFBACF7962AD7E8487351.d.5479A126C05887536AD411A2CEE64006.e.9")>
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+INFO     pages.BasePage:BasePage.py:43 Finding elements by locator: ('xpath', "//div[@class='content']//a")
+INFO     pages.BasePage:BasePage.py:46 Found elements: ('xpath', "//div[@class='content']//a")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//span[text()='Shopping Cart']")
+INFO     pages.BasePage:BasePage.py:21 Found element ('xpath', "//span[text()='Shopping Cart']")
+INFO     pages.BasePage:BasePage.py:55 Waiting until element is not visible: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+INFO     pages.BasePage:BasePage.py:58 Element is not visible: ('xpath', "//div[@id='alert']/div[text()=' Success: You have added ']")
+INFO     pages.BasePage:BasePage.py:18 Finding element by locator: ('xpath', "//div[@id='shopping-cart']//a")
+=============================== warnings summary ===============================
+venv/lib/python3.11/site-packages/_pytest/config/__init__.py:1448
+  /var/jenkins_home/workspace/test2/venv/lib/python3.11/site-packages/_pytest/config/__init__.py:1448: PytestConfigWarning: Unknown config option: rootdir
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_opencart_pages.py::TestOpenCartPages::test_product_elements - selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', "//div[@class='image magnific-popup']")
+Stacktrace:
+#0 0x5641f6a086ba <unknown>
+#1 0x5641f66d8730 <unknown>
+#2 0x5641f6727d9b <unknown>
+#3 0x5641f6728081 <unknown>
+#4 0x5641f676bcd4 <unknown>
+#5 0x5641f674aa7d <unknown>
+#6 0x5641f67691ca <unknown>
+#7 0x5641f674a7f3 <unknown>
+#8 0x5641f671aec9 <unknown>
+#9 0x5641f671b91e <unknown>
+#10 0x5641f69ce9eb <unknown>
+#11 0x5641f69d2972 <unknown>
+#12 0x5641f69bbe15 <unknown>
+#13 0x5641f69d3502 <unknown>
+#14 0x5641f69a0d2f <unknown>
+#15 0x5641f69f7578 <unknown>
+#16 0x5641f69f7750 <unknown>
+#17 0x5641f6a0748c <unknown>
+#18 0x7f08f21eaac3 <unknown>
+FAILED tests/test_opencart_scenarios.py::TestOpencartScenarios::test_admin_login_logout - selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('css selector', '#menu-extension')
+Stacktrace:
+#0 0x55f91ace46ba <unknown>
+#1 0x55f91a9b4730 <unknown>
+#2 0x55f91aa03d9b <unknown>
+#3 0x55f91aa04081 <unknown>
+#4 0x55f91aa47cd4 <unknown>
+#5 0x55f91aa26a7d <unknown>
+#6 0x55f91aa451ca <unknown>
+#7 0x55f91aa267f3 <unknown>
+#8 0x55f91a9f6ec9 <unknown>
+#9 0x55f91a9f791e <unknown>
+#10 0x55f91acaa9eb <unknown>
+#11 0x55f91acae972 <unknown>
+#12 0x55f91ac97e15 <unknown>
+#13 0x55f91acaf502 <unknown>
+#14 0x55f91ac7cd2f <unknown>
+#15 0x55f91acd3578 <unknown>
+#16 0x55f91acd3750 <unknown>
+#17 0x55f91ace348c <unknown>
+#18 0x7fbedbb61ac3 <unknown>
+FAILED tests/test_opencart_scenarios.py::TestOpencartScenarios::test_add_random_product_to_cart - selenium.common.exceptions.TimeoutException: Message: Can't find element by locator ('xpath', "//div[@id='shopping-cart']//a")
+Stacktrace:
+#0 0x563fe02546ba <unknown>
+#1 0x563fdff24730 <unknown>
+#2 0x563fdff73d9b <unknown>
+#3 0x563fdff74081 <unknown>
+#4 0x563fdffb7cd4 <unknown>
+#5 0x563fdff96a7d <unknown>
+#6 0x563fdffb51ca <unknown>
+#7 0x563fdff967f3 <unknown>
+#8 0x563fdff66ec9 <unknown>
+#9 0x563fdff6791e <unknown>
+#10 0x563fe021a9eb <unknown>
+#11 0x563fe021e972 <unknown>
+#12 0x563fe0207e15 <unknown>
+#13 0x563fe021f502 <unknown>
+#14 0x563fe01ecd2f <unknown>
+#15 0x563fe0243578 <unknown>
+#16 0x563fe0243750 <unknown>
+#17 0x563fe025348c <unknown>
+#18 0x7f59f2737ac3 <unknown>
+ERROR tests/test_opencart_scenarios.py::TestOpencartScenarios::test_add_new_product - IndexError: list index out of range
+ERROR tests/test_opencart_scenarios.py::TestOpencartScenarios::test_delete_product_from_admin - IndexError: list index out of range
+========= 3 failed, 7 passed, 1 warning, 2 errors in 67.87s (0:01:07) ==========
+Build step 'Execute shell' marked build as failure
+[test2] $ /var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/allurecli/bin/allure generate /var/jenkins_home/workspace/test2/allure-results -c -o /var/jenkins_home/workspace/test2/allure-report
+Report successfully generated to /var/jenkins_home/workspace/test2/allure-report
+Allure report was successfully generated.
+Creating artifact for the build.
+Artifact was added to the build.
+Finished: FAILURE
